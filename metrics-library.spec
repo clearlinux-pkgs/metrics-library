@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : metrics-library
-Version  : 1.0.196
-Release  : 1
-URL      : https://github.com/intel/metrics-library/archive/metrics-library-1.0.196/metrics-library-1.0.196.tar.gz
-Source0  : https://github.com/intel/metrics-library/archive/metrics-library-1.0.196/metrics-library-1.0.196.tar.gz
+Version  : 1.0.198
+Release  : 2
+URL      : https://github.com/intel/metrics-library/archive/metrics-library-1.0.198/metrics-library-1.0.198.tar.gz
+Source0  : https://github.com/intel/metrics-library/archive/metrics-library-1.0.198/metrics-library-1.0.198.tar.gz
 Summary  : Metrics Library for Intel(R) Metrics Discovery API
 Group    : Development/Tools
 License  : MIT
@@ -55,15 +55,15 @@ license components for the metrics-library package.
 
 
 %prep
-%setup -q -n metrics-library-metrics-library-1.0.196
-cd %{_builddir}/metrics-library-metrics-library-1.0.196
+%setup -q -n metrics-library-metrics-library-1.0.198
+cd %{_builddir}/metrics-library-metrics-library-1.0.198
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1749071576
+export SOURCE_DATE_EPOCH=1749654393
 mkdir -p clr-build
 pushd clr-build
 export GCC_IGNORE_WERROR=1
@@ -100,7 +100,7 @@ FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS"
 FCFLAGS="$CLEAR_INTERMEDIATE_FCFLAGS"
 ASFLAGS="$CLEAR_INTERMEDIATE_ASFLAGS"
 LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS"
-export SOURCE_DATE_EPOCH=1749071576
+export SOURCE_DATE_EPOCH=1749654393
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/metrics-library
 cp %{_builddir}/metrics-library-metrics-library-%{version}/LICENSE.md %{buildroot}/usr/share/package-licenses/metrics-library/d39b22518623f5cfcbca01d6697c60308bc0d68d || :
@@ -123,7 +123,7 @@ popd
 %files lib
 %defattr(-,root,root,-)
 /usr/lib64/libigdml.so.1
-/usr/lib64/libigdml.so.1.0.196
+/usr/lib64/libigdml.so.1.0.198
 
 %files license
 %defattr(0644,root,root,0755)
